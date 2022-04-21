@@ -1,0 +1,61 @@
+{
+    "name": "Snappymail",
+    "id": "snappymail",
+    "packaging_format": 1,
+    "description": {
+        "en": "Simple, modern, lightweight & fast web-based email client",
+        "fr": "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
+    },
+    "version": "2.15.0~ynh1",
+    "url": "https://snappymail.eu/",
+    "upstream": {
+        "license": "free",
+        "website": "https://snappymail.eu/",
+        "demo": "https://snappymail.eu/demo/",
+        "admindoc": "https://github.com/the-djmaze/snappymail/wiki",
+        "code": "https://github.com/the-djmaze/snappymail"
+    },
+    "license": "free",
+    "maintainer": {
+        "name": "John doe",
+        "email": "john.doe@example.com"
+    },
+    "requirements": {
+        "yunohost": ">= 4.3.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php7.3-fpm",
+        "mysql"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "example": "/snappymail",
+                "default": "/snappymail"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "language",
+                "type": "string",
+                "ask": {
+                    "en": "Select default language",
+                    "fr": "Definir la langue par defaut"
+                },
+                "choices": ["de", "en", "es", "fr", "it", "pt"],
+                "default": "en"
+            }
+        ]
+    }
+}
