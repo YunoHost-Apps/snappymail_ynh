@@ -106,9 +106,10 @@ ynh_add_fpm_config
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-# ynh_script_progression --message="Adding a configuration file..." --time --weight=1
+# ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-#ynh_add_config --template="../conf/application.ini" --destination="$final_path/data/_data_/_default_/configs/application.ini"
+mkdir -p "$final_path/data/_data_/_default_/configs/"
+ynh_add_config --template="../conf/application.ini" --destination="$final_path/data/_data_/_default_/configs/application.ini"
 
 #=================================================
 # GENERIC FINALIZATION
