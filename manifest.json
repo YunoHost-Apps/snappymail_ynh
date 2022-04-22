@@ -46,7 +46,6 @@
                 "type": "boolean",
                 "default": true
             },
-            ,
             {
                 "name": "password",
                 "type": "password"
