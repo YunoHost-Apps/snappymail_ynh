@@ -166,7 +166,7 @@ then
 
 	message="SnappyMail was successfully installed :) with the password found in 
 
-	Please open the admin UI https://$domain$path_url/?admin to configure your mail server settings. Login with user "admin" and password from the file `/var/www/webmail/data/_data_/_default_/admin_password.txt`.
+	Please open the admin UI https://$domain$path_url/?admin to configure your mail server settings. Login with user "admin" and password from the file /var/www/webmail/data/_data_/_default_/admin_password.txt.
 
 	Details for MySQL database to be enterted while registration process:
 
