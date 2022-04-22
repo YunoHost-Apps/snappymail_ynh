@@ -27,8 +27,6 @@ ynh_abort_if_errors
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
-password=$YNH_APP_ARG_PASSWORD
-language=$YNH_APP_ARG_LANGUAGE
 timezone="$(date +%:::z)"
 
 app=$YNH_APP_INSTANCE_NAME
@@ -51,8 +49,6 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
-ynh_app_setting_set --app=$app --key=password --value="$password"
-ynh_app_setting_set --app=$app --key=language --value=$language
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -111,25 +107,20 @@ ynh_add_fpm_config
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+# ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-mkdir -p "$final_path/data/_data_/_default_/configs/"
+# mkdir -p "$final_path/data/_data_/_default_/configs/"
 
-ynh_add_config --template="../conf/application.ini" --destination="$final_path/data/_data_/_default_/configs/application.ini"
+# ynh_add_config --template="../conf/application.ini" --destination="$final_path/data/_data_/_default_/configs/application.ini"
 
-ynh_add_config --template="../conf/admin_password.txt" --destination="$final_path/data/_data_/_default_/admin_password.txt"
+# ynh_add_config --template="../conf/admin_password.txt" --destination="$final_path/data/_data_/_default_/admin_password.txt"
 
 
-chmod 750 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
+# chmod 450 "$final_path/data/_data_/_default_/configs/application.ini"
+# chown $app:$app "$final_path/data/_data_/_default_/configs/application.ini"
 
-chmod 450 "$final_path/data/_data_/_default_/configs/application.ini"
-chown $app:$app "$final_path/data/_data_/_default_/configs/application.ini"
-
-chmod 450 "$final_path/data/_data_/_default_/admin_password.txt"
-chown $app:$app "$final_path/data/_data_/_default_/admin_password.txt"
-
+# chmod 450 "$final_path/data/_data_/_default_/admin_password.txt"
+# chown $app:$app "$final_path/data/_data_/_default_/admin_password.txt"
 
 #=================================================
 # GENERIC FINALIZATION
