@@ -6,6 +6,7 @@
 		language="fr"
 		admin="john"
 		password="1Strong-Password"
+		with_mysql=1
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
