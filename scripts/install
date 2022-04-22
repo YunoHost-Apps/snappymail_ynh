@@ -111,12 +111,19 @@ ynh_add_fpm_config
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-# ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-#mkdir -p "$final_path/data/_data_/_default_/configs/"
-#ynh_add_config --template="../conf/application.ini" --destination="$final_path/data/_data_/_default_/configs/application.ini"
+mkdir -p "$final_path/data/_data_/_default_/configs/"
 
-#ynh_add_config --template="../conf/admin_password.txt" --destination="$final_path/data/_data_/_default_/admin_password.txt"
+ynh_add_config --template="../conf/application.ini" --destination="$final_path/data/_data_/_default_/configs/application.ini"
+
+chmod 400 "$final_path/data/_data_/_default_/configs/application.ini"
+chown $app:$app "$final_path/data/_data_/_default_/configs/application.ini"
+
+ynh_add_config --template="../conf/admin_password.txt" --destination="$final_path/data/_data_/_default_/admin_password.txt"
+
+chmod 400 "$final_path/data/_data_/_default_/admin_password.txt"
+chown $app:$app "$final_path/data/_data_/_default_/admin_password.txt"
 
 #=================================================
 # GENERIC FINALIZATION
