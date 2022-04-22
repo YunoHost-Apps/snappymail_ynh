@@ -28,6 +28,7 @@ domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
 timezone="$(date +%:::z)"
+with_mysql=$YNH_APP_ARG_WITH_MYSQL
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -49,6 +50,7 @@ ynh_script_progression --message="Storing installation settings..." --weight=1
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
+ynh_app_setting_set --app=$app --key=with_mysql --value=$with_mysql
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -68,12 +70,16 @@ ynh_system_user_create --username=$app --home_dir="$final_path"
 #=================================================
 # CREATE A MYSQL DATABASE
 #=================================================
-ynh_script_progression --message="Creating a MySQL database..." --weight=2
 
-db_name=$(ynh_sanitize_dbid --db_name=$app)
-db_user=$db_name
-ynh_app_setting_set --app=$app --key=db_name --value=$db_name
-ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
+if [ $with_mysql -eq 1 ]
+then
+    ynh_script_progression --message="Creating a MySQL database..." --weight=2
+
+    db_name=$(ynh_sanitize_dbid --db_name=$app)
+    db_user=$db_name
+    ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+    ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
+fi
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -149,6 +155,29 @@ fi
 ynh_script_progression --message="Reloading NGINX web server..." --weight=1
 
 ynh_systemd_action --service_name=nginx --action=reload
+
+#=================================================
+# SEND A README FOR THE ADMIN
+#=================================================
+
+if [ $with_mysql -eq 1 ]
+then
+	ynh_script_progression --message="Sending a readme for the admin..." --weight=1
+
+	message="SnappyMail was successfully installed :) with the password found in 
+
+	Please open the admin UI https://$domain$path_url/?admin to configure your mail server settings. Login with user "admin" and password from the file /var/www/webmail/data/_data_/_default_/admin_password.txt.
+
+	Details for MySQL database to be enterted while registration process:
+
+	Database login:    $db_user
+	Database name:     $db_name
+	Database password: $db_pwd
+
+	If you are facing any problem or want to improve this app, please open a new issue here: https://github.com/YunoHost-Apps/snappymail_ynh/issues"
+
+	ynh_send_readme_to_admin "$message"
+fi
 
 #=================================================
 # END OF SCRIPT
