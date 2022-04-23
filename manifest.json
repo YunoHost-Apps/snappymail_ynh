@@ -50,8 +50,8 @@
                 "name": "with_mysql",
                 "type": "boolean",
                 "help": {
-                    "en": "SQLite database is used by default.",
-                    "fr": "SQLite est utilisée par défaut."
+                    "en": "SQLite database is used by default. Choose MySQL if you have a large number of active users.",
+                    "fr": "SQLite est utilisée par défaut. Choisissez MySQL si vous avez un grand nombre d'utilisateurs actifs."
                 },
                 "ask": {
                     "en": "Do you need a MySQL database?",
