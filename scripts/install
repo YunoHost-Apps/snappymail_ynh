@@ -119,14 +119,8 @@ ynh_add_fpm_config
 
 # ynh_add_config --template="../conf/application.ini" --destination="$final_path/data/_data_/_default_/configs/application.ini"
 
-# ynh_add_config --template="../conf/admin_password.txt" --destination="$final_path/data/_data_/_default_/admin_password.txt"
-
-
 # chmod 450 "$final_path/data/_data_/_default_/configs/application.ini"
 # chown $app:$app "$final_path/data/_data_/_default_/configs/application.ini"
-
-# chmod 450 "$final_path/data/_data_/_default_/admin_password.txt"
-# chown $app:$app "$final_path/data/_data_/_default_/admin_password.txt"
 
 #=================================================
 # GENERIC FINALIZATION
