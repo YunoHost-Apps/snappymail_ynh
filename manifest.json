@@ -49,6 +49,10 @@
             {
                 "name": "with_mysql",
                 "type": "boolean",
+                "help": {
+                    "en": "SQLite database is used by default.",
+                    "fr": "SQLite est utilisée par défaut."
+                },
                 "ask": {
                     "en": "Do you need a MySQL database?",
                     "fr": "Avez-vous besoin d'une base de données MySQL ?"
