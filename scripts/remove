@@ -12,7 +12,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 # LOAD SETTINGS
 #=================================================
-ynh_script_progression --message="Loading installation settings..." --time --weight=1
+ynh_script_progression --message="Loading installation settings..." --weight=1
 
 app=$YNH_APP_INSTANCE_NAME
 
@@ -22,7 +22,7 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 #=================================================
 # REMOVE LOGROTATE CONFIGURATION
 #=================================================
-ynh_script_progression --message="Removing logrotate configuration..." --time --weight=1
+ynh_script_progression --message="Removing logrotate configuration..." --weight=1
 
 # Remove the app-specific logrotate config
 ynh_remove_logrotate
