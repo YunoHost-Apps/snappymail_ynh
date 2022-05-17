@@ -14,13 +14,13 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**Version incluse :** 2.15.1~ynh1
+**Version incluse :** 2.15.3~ynh1
 
 **Démo :** https://snappymail.eu/demo/
 
 ## Avertissements / informations importantes
 
-Open the admin UI `https://example.com/?admin` to configure your mail server settings. Login with user "admin" and password from the file `/var/www/webmail/data/_data_/_default_/admin_password.txt`.
+Open the admin UI `https://example.com/?admin` to configure your mail server settings. Login with user "admin" and password from the file `/var/www/snappymail/data/_data_/_default_/admin_password.txt`.
 
 ## Documentations et ressources
 
