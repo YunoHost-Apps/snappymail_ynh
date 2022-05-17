@@ -20,6 +20,9 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 
+fpm_footprint=$(ynh_app_setting_get --app=$app --key=fpm_footprint)
+fpm_usage=$(ynh_app_setting_get --app=$app --key=fpm_usage)
+
 #=================================================
 # CHECK VERSION
 #=================================================
@@ -39,6 +42,44 @@ ynh_clean_setup () {
 }
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
+
+#=================================================
+# STANDARD UPGRADE STEPS
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+
+# If db_name doesn't exist, create it
+if [ -z "$db_name" ]; then
+	db_name=$(ynh_sanitize_dbid --db_name=$app)
+	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+fi
+
+# If final_path doesn't exist, create it
+if [ -z "$final_path" ]; then
+	final_path=/var/www/$app
+	ynh_app_setting_set --app=$app --key=final_path --value=$final_path
+fi
+
+# If fpm_footprint doesn't exist, create it
+if [ -z "$fpm_footprint" ]; then
+	fpm_footprint=low
+	ynh_app_setting_set --app=$app --key=fpm_footprint --value=$fpm_footprint
+fi
+
+# If fpm_usage doesn't exist, create it
+if [ -z "$fpm_usage" ]; then
+	fpm_usage=low
+	ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
+fi
+
+# Cleaning legacy permissions
+if ynh_legacy_permissions_exists; then
+	ynh_legacy_permissions_delete_all
+
+	ynh_app_setting_delete --app=$app --key=is_public
+fi
 
 #=================================================
 # CREATE DEDICATED USER
@@ -85,7 +126,7 @@ ynh_install_app_dependencies $pkg_dependencies
 ynh_script_progression --message="Upgrading PHP-FPM configuration..." --weight=1
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config
+ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
 
 #=================================================
 # GENERIC FINALIZATION
