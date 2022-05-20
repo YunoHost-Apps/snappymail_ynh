@@ -2,6 +2,5 @@ SOURCE_URL=https://github.com/the-djmaze/snappymail/releases/download/v2.16.1/sn
 SOURCE_SUM=bf62279e2b1051b566a5a5d080a71555ae7c5e134d36d395a442f5a46e12729f
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=false
+SOURCE_IN_SUBDIR=true
 SOURCE_FILENAME=
-SOURCE_EXTRACT=true
