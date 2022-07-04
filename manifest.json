@@ -3,7 +3,7 @@
     "id": "snappymail",
     "packaging_format": 1,
     "description": {
-        "en": "Simple, modern, lightweight & fast web-based email client",
+        "en": "Simple, modern, lightweight & fast web-based e-mail client",
         "fr": "Client de messagerie Web simple, moderne, léger et rapide"
     },
     "version": "2.16.3~ynh1",
