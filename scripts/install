@@ -28,7 +28,6 @@ domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
 timezone="$(date +%:::z)"
-with_mysql=$YNH_APP_ARG_WITH_MYSQL
 phpversion=$YNH_PHP_VERSION
 
 app=$YNH_APP_INSTANCE_NAME
@@ -71,16 +70,12 @@ ynh_system_user_create --username=$app --home_dir="$final_path"
 #=================================================
 # CREATE A MYSQL DATABASE
 #=================================================
+ynh_script_progression --message="Creating a MySQL database..." --weight=2
 
-if [ $with_mysql -eq 1 ]
-then
-    ynh_script_progression --message="Creating a MySQL database..." --weight=2
-
-    db_name=$(ynh_sanitize_dbid --db_name=$app)
-    db_user=$db_name
-    ynh_app_setting_set --app=$app --key=db_name --value=$db_name
-    ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
-fi
+db_name=$(ynh_sanitize_dbid --db_name=$app)
+db_user=$db_name
+ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+ynh_mysql_setup_db --db_user=$db_user --db_name=$db_name
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
