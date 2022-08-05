@@ -6,7 +6,7 @@
         "en": "Simple, modern, lightweight & fast web-based e-mail client",
         "fr": "Client de messagerie Web simple, moderne, léger et rapide"
     },
-    "version": "2.17.0~ynh1",
+    "version": "2.17.1~ynh1",
     "url": "https://snappymail.eu/",
     "upstream": {
         "license": "AGPL-3.0-only",
