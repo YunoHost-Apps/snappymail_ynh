@@ -20,6 +20,7 @@ Simple, modern, lightweight & fast web-based email client. The drastically upgra
 
 **Shipped version:** 2.17.1~ynh1
 
+
 **Demo:** https://snappymail.eu/demo/
 ## Disclaimers / important information
 
