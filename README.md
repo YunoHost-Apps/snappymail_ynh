@@ -22,6 +22,11 @@ Simple, modern, lightweight & fast web-based email client. The drastically upgra
 
 
 **Demo:** https://snappymail.eu/demo/
+
+## Screenshots
+
+![Screenshot of SnappyMail](./doc/screenshots/screenshot.png)
+
 ## Disclaimers / important information
 
 :heavy_exclamation_mark: The password-file is created after first opening the admin UI!
