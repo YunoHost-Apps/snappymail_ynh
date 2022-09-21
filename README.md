@@ -17,11 +17,15 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
-
 **Shipped version:** 2.18.1~ynh1
 
 
 **Demo:** https://snappymail.eu/demo/
+
+## Screenshots
+
+![Screenshot of SnappyMail](./doc/screenshots/screenshot.png)
+
 ## Disclaimers / important information
 
 :heavy_exclamation_mark: The password-file is created after first opening the admin UI!
