@@ -18,7 +18,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**Version incluse :** 2.18.2~ynh1
+**Version incluse :** 2.18.3~ynh1 *(:warning: Il s'agit de la branche `testing`. La [branche `master`](https://github.com/YunoHost-Apps/snappymail_ynh/tree/master) utilisée dans le catalogue est actuellement en 2.18.2\~ynh1.)*
 
 
 **Démo :** https://snappymail.eu/demo/
