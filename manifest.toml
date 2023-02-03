@@ -46,5 +46,5 @@ ram.runtime = "50M"
     [resources.permissions]
     main.url = "/"
 
-
-php8.0-sqlite3 php8.0-tidy php8.0-dom php8.0-intl php8.0-mysql php8.0-curl php8.0-gd php8.0-cli php8.0-xml php8.0-mbstring
+    [resources.apt]
+    packages = "php8.0-sqlite3 php8.0-tidy php8.0-dom php8.0-intl php8.0-mysql php8.0-curl php8.0-gd php8.0-cli php8.0-xml php8.0-mbstring"
