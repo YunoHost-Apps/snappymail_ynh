@@ -1,0 +1,50 @@
+packaging_format = 2
+
+id = "snappymail"
+name = "SnappyMail"
+description.en = "Simple, modern, lightweight & fast web-based e-mail client"
+description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
+
+version = "2.25.2~ynh1"
+
+maintainers = []
+
+[upstream]
+license = "AGPL-3.0-only"
+website = "https://snappymail.eu/"
+demo = "https://snappymail.eu/demo/"
+admindoc = "https://github.com/the-djmaze/snappymail/wiki"
+code = "https://github.com/the-djmaze/snappymail"
+
+[integration]
+yunohost = ">= 11.1.2"
+architectures = "all"
+multi_instance = true
+ldap = false
+sso = false
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/snappymail"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "php8.0-sqlite3 php8.0-tidy php8.0-dom php8.0-intl php8.0-mysql php8.0-curl php8.0-gd php8.0-cli php8.0-xml php8.0-mbstring"
