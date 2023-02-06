@@ -7,7 +7,7 @@ description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
 version = "2.25.4~ynh1"
 
-maintainers = "eric_G"
+maintainers = ["eric_G"]
 
 [upstream]
 license = "AGPL-3.0-only"
