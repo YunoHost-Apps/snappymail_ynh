@@ -6,6 +6,7 @@ It shall NOT be edited by hand.
 # SnappyMail pour YunoHost
 
 [![Niveau d’intégration](https://dash.yunohost.org/integration/snappymail.svg)](https://dash.yunohost.org/appci/app/snappymail) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
+
 [![Installer SnappyMail avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=snappymail)
 
 *[Read this readme in english.](./README.md)*
@@ -18,7 +19,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**Version incluse :** 2.25.5~ynh1
+**Version incluse :** 2.26.1~ynh1
 
 **Démo :** https://snappymail.eu/demo/
 

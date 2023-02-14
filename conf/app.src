@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/the-djmaze/snappymail/releases/download/v2.25.5/snappymail-2.25.5.tar.gz
-SOURCE_SUM=a0d67197369a2082be634b7066675d57b6c95c4b1c376da92d6b2410f19a0777
+SOURCE_URL=https://github.com/the-djmaze/snappymail/releases/download/v2.26.1/snappymail-2.26.1.tar.gz
+SOURCE_SUM=42b2c48fb866509d07666a87676b63e9576fa11f165157feab71c302e21f7914
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=false
