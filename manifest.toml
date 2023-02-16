@@ -17,7 +17,7 @@ admindoc = "https://github.com/the-djmaze/snappymail/wiki"
 code = "https://github.com/the-djmaze/snappymail"
 
 [integration]
-yunohost = ">= 11.1.6"
+yunohost = ">= 11.1.7"
 architectures = ["amd64", "arm64"]
 multi_instance = true
 ldap = false
