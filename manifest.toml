@@ -5,7 +5,7 @@ name = "SnappyMail"
 description.en = "Simple, modern, lightweight & fast web-based e-mail client"
 description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
-version = "2.26.3~ynh1"
+version = "2.26.4~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -17,7 +17,7 @@ admindoc = "https://github.com/the-djmaze/snappymail/wiki"
 code = "https://github.com/the-djmaze/snappymail"
 
 [integration]
-yunohost = ">= 11.1.9"
+yunohost = ">= 11.1.14"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -39,6 +39,14 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.26.4/snappymail-2.26.4.tar.gz"
+        sha256 = "0568e4773026f7f6ef3d38ec760f95afe82bd1fab312f01199ac92b61f797ec2"
+        in_subdir = false
+
     [resources.system_user]
 
     [resources.install_dir]
