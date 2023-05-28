@@ -5,7 +5,7 @@ name = "SnappyMail"
 description.en = "Simple, modern, lightweight & fast web-based e-mail client"
 description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
-version = "2.27.3~ynh1"
+version = "2.27.3~ynh2"
 
 maintainers = ["eric_G"]
 
