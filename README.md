@@ -19,7 +19,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**Shipped version:** 2.28.0~ynh1
+**Shipped version:** 2.28.1~ynh1
 
 **Demo:** https://snappymail.eu/demo/
 
