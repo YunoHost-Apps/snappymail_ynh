@@ -51,6 +51,28 @@ ynh_add_nginx_config
 ynh_use_logrotate
 
 #=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+mkdir -p "$install_dir/data/_data_/_default_/configs"
+chown $app:$app -R "$install_dir/data/_data_"
+
+ynh_add_config --template="application.ini" --destination="$install_dir/data/_data_/_default_/configs/application.ini"
+
+chmod 400 "$install_dir/data/_data_/_default_/configs/application.ini"
+chown $app:$app "$install_dir/data/_data_/_default_/configs/application.ini"
+
+#=================================================
+# SETUP SSO
+#=================================================
+ynh_script_progression --message="Applying SSO patch..." --weight=1
+
+ynh_add_config --template="../sources/sso.php" --destination="$install_dir/sso.php"
+
+#=================================================
 # END OF SCRIPT
 #=================================================
 
