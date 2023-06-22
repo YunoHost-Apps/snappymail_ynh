@@ -5,7 +5,7 @@ name = "SnappyMail"
 description.en = "Simple, modern, lightweight & fast web-based e-mail client"
 description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
-version = "2.28.1~ynh1"
+version = "2.28.3~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -43,8 +43,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.28.1/snappymail-2.28.1.tar.gz"
-        sha256 = "7addcab882c734f50c6aa80e7df321d70ef78744e151b73f951f36a45686eab3"
+        url = "https://github.com/the-djmaze/snappymail/archive/refs/tags/v2.28.3.tar.gz"
+        sha256 = "d9a528d781d29f78e2fffa0bb13f66a8b79624344061c58951302c3035985239"
         in_subdir = false
         autoupdate.strategy = "latest_github_tag"
 
