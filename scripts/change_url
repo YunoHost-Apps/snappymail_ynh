@@ -13,7 +13,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Applying SSO patch..." --weight=1
 
-ynh_add_config --template="../sources/sso.php" --destination="$install_dir/index.php"
+ynh_add_config --template="../conf/sso.php" --destination="$install_dir/index.php"
 
 #=================================================
 # MODIFY URL IN NGINX CONF
