@@ -38,6 +38,17 @@ if [ -z "${fpm_usage:-}" ]; then
     ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
 fi
 
+# Do something when upgrading from 2.3.2~ynh1 or lower
+if ynh_compare_current_package_version --comparison le --version 2.28.4~ynh1
+then
+    # Move everything inside a $install_dir/app/ subfolder
+    # This allows to have a $install_dir/index.php handling the SSO
+    mkdir -p $install_dir/app
+    # Ugly way to not return an error when moving everything to a subfolter of the same folder https://stackoverflow.com/a/43262922
+    find $install_dir -maxdepth 1 -mindepth 1 -not -name app -exec mv -t $install_dir/app {} +
+    chown $app:root $install_dir/app/
+fi
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -47,7 +58,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=5
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep="data/_data_/_default_/configs/application.ini"
+	ynh_setup_source --dest_dir="$install_dir/app" --keep="data/_data_/_default_/configs/application.ini"
 fi
 
 chmod -R o-rwx "$install_dir"
@@ -66,6 +77,25 @@ ynh_add_nginx_config
 
 # Use logrotate to manage app-specific logfile(s)
 ynh_use_logrotate --non-append
+
+#=================================================
+# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Updating a configuration file..." --weight=1
+
+ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
+
+chmod 400 "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+
+#=================================================
+# SETUP SSO
+#=================================================
+ynh_script_progression --message="Applying SSO patch..." --weight=1
+
+ynh_add_config --template="../conf/sso.php" --destination="$install_dir/index.php"
 
 #=================================================
 # END OF SCRIPT
