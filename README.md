@@ -19,7 +19,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**Shipped version:** 2.28.4~ynh2
+**Shipped version:** 2.29.1~ynh1
 
 **Demo:** https://snappymail.eu/demo/
 
@@ -32,7 +32,6 @@ Simple, modern, lightweight & fast web-based email client. The drastically upgra
 * Official app website: <https://snappymail.eu/>
 * Official admin documentation: <https://github.com/the-djmaze/snappymail/wiki>
 * Upstream app code repository: <https://github.com/the-djmaze/snappymail>
-* YunoHost documentation for this app: <https://yunohost.org/app_snappymail>
 * Report a bug: <https://github.com/YunoHost-Apps/snappymail_ynh/issues>
 
 ## Developer info
