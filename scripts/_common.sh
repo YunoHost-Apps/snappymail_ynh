@@ -4,6 +4,9 @@
 # COMMON VARIABLES
 #=================================================
 
+main_domain=$(cat /etc/yunohost/current_host)
+timezone=$(cat /etc/timezone)
+
 #=================================================
 # PERSONAL HELPERS
 #=================================================

@@ -31,7 +31,7 @@ ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
 ynh_script_progression --message="Setting up source files..." --weight=3
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir"
+ynh_setup_source --dest_dir="$install_dir/app"
 
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
@@ -49,6 +49,28 @@ ynh_add_nginx_config
 
 # Use logrotate to manage application logfile(s)
 ynh_use_logrotate
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+mkdir -p "$install_dir/app/data/_data_/_default_/configs"
+chown $app:$app -R "$install_dir/app/data/_data_"
+
+ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
+
+chmod 400 "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+
+#=================================================
+# SETUP SSO
+#=================================================
+ynh_script_progression --message="Applying SSO patch..." --weight=1
+
+ynh_add_config --template="../conf/sso.php" --destination="$install_dir/index.php"
 
 #=================================================
 # END OF SCRIPT

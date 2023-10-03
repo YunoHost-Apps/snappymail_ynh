@@ -18,7 +18,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 Client de messagerie Web simple, moderne, léger et rapide. Snappymail est un fork considérablement amélioré et sécurisé de l'édition RainLoop Webmail Community.
 
-**Version incluse :** 2.28.4~ynh1
+**Version incluse :** 2.29.1~ynh1
 
 **Démo :** https://snappymail.eu/demo/
 
@@ -31,7 +31,6 @@ Client de messagerie Web simple, moderne, léger et rapide. Snappymail est un fo
 * Site officiel de l’app : <https://snappymail.eu/>
 * Documentation officielle de l’admin : <https://github.com/the-djmaze/snappymail/wiki>
 * Dépôt de code officiel de l’app : <https://github.com/the-djmaze/snappymail>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_snappymail>
 * Signaler un bug : <https://github.com/YunoHost-Apps/snappymail_ynh/issues>
 
 ## Informations pour les développeurs

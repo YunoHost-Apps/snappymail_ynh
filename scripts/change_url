@@ -6,7 +6,25 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
+source _common.sh
 source /usr/share/yunohost/helpers
+
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Updating a configuration file..." --weight=1
+
+ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
+
+chmod 400 "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+
+#=================================================
+# SETUP SSO
+#=================================================
+ynh_script_progression --message="Applying SSO patch..." --weight=1
+
+ynh_add_config --template="../conf/sso.php" --destination="$install_dir/index.php"
 
 #=================================================
 # MODIFY URL IN NGINX CONF
