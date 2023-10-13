@@ -22,6 +22,13 @@ ynh_print_info --message="Declaring files to be backed up..."
 ynh_backup --src_path="$install_dir"
 
 #=================================================
+# BACKUP THE DATA DIR
+#=================================================
+
+# Only relevant if there is a "data_dir" resource for this app
+ynh_backup --src_path="$data_dir" --is_big
+
+#=================================================
 # BACKUP THE NGINX CONFIGURATION
 #=================================================
 
@@ -40,6 +47,13 @@ ynh_backup --src_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
 #=================================================
 
 ynh_backup --src_path="/etc/logrotate.d/$app"
+
+#=================================================
+# BACKUP THE MYSQL DATABASE
+#=================================================
+ynh_print_info --message="Backing up the MySQL database..."
+
+ynh_mysql_dump_db --database="$db_name" > db.sql
 
 #=================================================
 # END OF SCRIPT

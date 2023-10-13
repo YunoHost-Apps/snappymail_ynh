@@ -21,12 +21,28 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
+# RESTORE THE DATA DIRECTORY
+#=================================================
+ynh_script_progression --message="Restoring the data directory..." --weight=1
+
+ynh_restore_file --origin_path="$data_dir" --not_mandatory
+
+# (Same as for install dir)
+chown -R $app:www-data "$data_dir"
+
+#=================================================
+# RESTORE THE MYSQL DATABASE
+#=================================================
+ynh_script_progression --message="Restoring the MySQL database..." --weight=1
+
+ynh_mysql_connect_as --user=$db_user --password=$db_pwd --database=$db_name < ./db.sql
+
+#=================================================
 # RESTORE SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Restoring the PHP-FPM configuration..." --weight=4
 
 ynh_restore_file --origin_path="/etc/php/$phpversion/fpm/pool.d/$app.conf"
-ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint --phpversion=$phpversion
 
 ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
 

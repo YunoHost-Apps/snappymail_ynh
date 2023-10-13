@@ -57,13 +57,9 @@ ynh_use_logrotate
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-mkdir -p "$install_dir/app/data/_data_/_default_/configs"
-chown $app:$app -R "$install_dir/app/data/_data_"
-
-ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
-
-chmod 400 "$install_dir/app/data/_data_/_default_/configs/application.ini"
-chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+ynh_add_config --template="application.ini" --destination="$data_dir/application.ini"
+chmod 400 "$data_dir/application.ini"
+chown $app:$app "$data_dir/application.ini"
 
 ynh_add_config --template="include.php" --destination="$install_dir/include.php"
 chmod 400 "$install_dir/include.php"
@@ -74,7 +70,7 @@ chown $app:$app "$install_dir/include.php"
 #=================================================
 ynh_script_progression --message="Applying SSO patch..." --weight=1
 
-ynh_add_config --template="../conf/sso.php" --destination="$install_dir/index.php"
+ynh_add_config --template="sso.php" --destination="$install_dir/index.php"
 
 #=================================================
 # END OF SCRIPT

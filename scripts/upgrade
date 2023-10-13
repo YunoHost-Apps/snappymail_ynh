@@ -58,7 +58,7 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=5
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir/app" --keep="data/_data_/_default_/configs/application.ini"
+	ynh_setup_source --dest_dir="$install_dir/app"
 fi
 
 chmod -R o-rwx "$install_dir"
@@ -70,7 +70,7 @@ chown -R $app:www-data "$install_dir"
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=5
 
 # Create a dedicated PHP-FPM config
-ynh_add_fpm_config --phpversion=$phpversion --usage=$fpm_usage --footprint=$fpm_footprint
+ynh_add_fpm_config --usage=$fpm_usage --footprint=$fpm_footprint
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
@@ -85,17 +85,17 @@ ynh_use_logrotate --non-append
 #=================================================
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
-ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
+ynh_add_config --template="application.ini" --destination="$data_dir/application.ini"
 
-chmod 400 "$install_dir/app/data/_data_/_default_/configs/application.ini"
-chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chmod 400 "$data_dir/application.ini"
+chown $app:$app "$data_dir/application.ini"
 
 #=================================================
 # SETUP SSO
 #=================================================
 ynh_script_progression --message="Applying SSO patch..." --weight=1
 
-ynh_add_config --template="../conf/sso.php" --destination="$install_dir/index.php"
+ynh_add_config --template="sso.php" --destination="$install_dir/index.php"
 
 #=================================================
 # END OF SCRIPT
