@@ -5,7 +5,7 @@ name = "SnappyMail"
 description.en = "Simple, modern, lightweight & fast web-based e-mail client"
 description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
-version = "2.29.1~ynh1"
+version = "2.29.1~ynh2"
 
 maintainers = ["eric_G"]
 
@@ -21,9 +21,9 @@ yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
-sso = false
+sso = true
 disk = "50M"
-ram.build = "100M"
+ram.build = "150M"
 ram.runtime = "50M"
 
 [install]
@@ -56,7 +56,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server, php8.2-sqlite3, php8.2-tidy, php8.2-dom, php8.2-intl, php8.2-mysql, php8.2-curl, php8.2-gd, php8.2-cli, php8.2-xml, php8.2-mbstring"
+    packages = "mariadb-server, php8.2-sqlite3, php8.2-tidy, php8.2-dom, php8.2-intl, php8.2-mysql, php8.2-curl, php8.2-gd, php8.2-cli, php8.2-xml, php8.2-mbstring, php8.2-ldap"
 
     [resources.database]
     type = "mysql"
