@@ -17,7 +17,7 @@
 /**
  * Custom 'data' folder path
  */
-define('APP_DATA_FOLDER_PATH', '__DATA_DIR__');
+define('APP_DATA_FOLDER_PATH', '__DATA_DIR__/data/');
 
 /**
  * Additional configuration file name

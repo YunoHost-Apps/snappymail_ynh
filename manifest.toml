@@ -44,7 +44,7 @@ ram.runtime = "50M"
     type = "select"
     choices = ["fr", "en"]
     default = "fr"
-    
+
 [resources]
 
     [resources.sources]
@@ -60,6 +60,7 @@ ram.runtime = "50M"
     [resources.install_dir]
 
     [resources.data_dir]
+    subdirs = ["data"]
 
     [resources.permissions]
     main.url = "/"
