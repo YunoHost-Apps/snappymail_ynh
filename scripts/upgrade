@@ -89,9 +89,9 @@ ynh_add_config --template="application.ini" --destination="$data_dir/application
 chmod 400 "$data_dir/application.ini"
 chown $app:$app "$data_dir/application.ini"
 
-ynh_add_config --template="include.php" --destination="$install_dir/include.php"
-chmod 400 "$install_dir/include.php"
-chown $app:$app "$install_dir/include.php"
+ynh_add_config --template="include.php" --destination="$install_dir/app/include.php"
+chmod 400 "$install_dir/app/include.php"
+chown $app:$app "$install_dir/app/include.php"
 
 #=================================================
 # SETUP SSO
