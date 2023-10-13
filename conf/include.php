@@ -17,12 +17,12 @@
 /**
  * Custom 'data' folder path
  */
-define('APP_DATA_FOLDER_PATH', '__DATA_DIR__/');
+define('APP_DATA_FOLDER_PATH', '__DATA_DIR__/data/');
 
 /**
  * Additional configuration file name
  */
-define('APP_CONFIGURATION_NAME', '__DATA_DIR__/application.ini');
+//define('APP_CONFIGURATION_NAME', '__DATA_DIR__/application.ini');
 
 /**
  * Also update extensions on upgrade
