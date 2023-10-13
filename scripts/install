@@ -31,7 +31,7 @@ ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
 ynh_script_progression --message="Setting up source files..." --weight=3
 
 # Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir/app"
+ynh_setup_source --dest_dir="$install_dir"
 
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
@@ -61,9 +61,9 @@ ynh_add_config --template="application.ini" --destination="$data_dir/application
 chmod 400 "$data_dir/application.ini"
 chown $app:$app "$data_dir/application.ini"
 
-ynh_add_config --template="include.php" --destination="$install_dir/app/include.php"
-chmod 400 "$install_dir/app/include.php"
-chown $app:$app "$install_dir/app/include.php"
+ynh_add_config --template="include.php" --destination="$install_dir/include.php"
+chmod 400 "$install_dir/include.php"
+chown $app:$app "$install_dir/include.php"
 
 #=================================================
 # SETUP SSO
