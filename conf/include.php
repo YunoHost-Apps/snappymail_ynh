@@ -22,7 +22,7 @@ define('APP_DATA_FOLDER_PATH', '__DATA_DIR__/');
 /**
  * Additional configuration file name
  */
-define('APP_CONFIGURATION_NAME', __DATA_DIR__'.ini');
+define('APP_CONFIGURATION_NAME', '__DATA_DIR__/application.ini');
 
 /**
  * Also update extensions on upgrade
