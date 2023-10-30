@@ -62,7 +62,7 @@ chown $app:$app -R "$install_dir/app/data/_data_"
 
 ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
-chmod 400 "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
 chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
 
 #=================================================
