@@ -32,6 +32,7 @@ Simple, modern, lightweight & fast web-based email client. The drastically upgra
 * Official app website: <https://snappymail.eu/>
 * Official admin documentation: <https://github.com/the-djmaze/snappymail/wiki>
 * Upstream app code repository: <https://github.com/the-djmaze/snappymail>
+* YunoHost Store: <https://apps.yunohost.org/app/snappymail>
 * Report a bug: <https://github.com/YunoHost-Apps/snappymail_ynh/issues>
 
 ## Developer info

@@ -31,6 +31,7 @@ Client de messagerie Web simple, moderne, léger et rapide. Snappymail est un fo
 * Site officiel de l’app : <https://snappymail.eu/>
 * Documentation officielle de l’admin : <https://github.com/the-djmaze/snappymail/wiki>
 * Dépôt de code officiel de l’app : <https://github.com/the-djmaze/snappymail>
+* YunoHost Store: <https://apps.yunohost.org/app/snappymail>
 * Signaler un bug : <https://github.com/YunoHost-Apps/snappymail_ynh/issues>
 
 ## Informations pour les développeurs
