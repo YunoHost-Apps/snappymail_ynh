@@ -21,9 +21,9 @@ fpm_usage="low"
 # STORE SETTINGS FROM MANIFEST
 #=================================================
 
-ynh_app_setting_set --app=$app --key=fpm_footprint --value=$fpm_footprint
-ynh_app_setting_set --app=$app --key=fpm_free_footprint --value=$fpm_free_footprint
-ynh_app_setting_set --app=$app --key=fpm_usage --value=$fpm_usage
+ynh_app_setting_set --app="$app" --key=fpm_footprint --value=$fpm_footprint
+ynh_app_setting_set --app="$app" --key=fpm_free_footprint --value=$fpm_free_footprint
+ynh_app_setting_set --app="$app" --key=fpm_usage --value=$fpm_usage
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -34,7 +34,7 @@ ynh_script_progression --message="Setting up source files..." --weight=3
 ynh_setup_source --dest_dir="$install_dir/app"
 
 chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
+chown -R "$app":www-data "$install_dir"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -58,12 +58,12 @@ ynh_use_logrotate
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 mkdir -p "$install_dir/app/data/_data_/_default_/configs"
-chown $app:$app -R "$install_dir/app/data/_data_"
+chown "$app":"$app" -R "$install_dir/app/data/_data_"
 
 ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
 chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
-chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chown "$app":"$app" "$install_dir/app/data/_data_/_default_/configs/application.ini"
 
 #=================================================
 # SETUP SSO
