@@ -21,10 +21,7 @@ ynh_change_url_nginx_config
 #=================================================
 ynh_script_progression --message="Updating a configuration file..." --weight=1
 
-ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
-
-chmod 400 "$install_dir/app/data/_data_/_default_/configs/application.ini"
-chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+ynh_replace_string --match_string='default_domain = "$domain"' --replace_string='default_domain = "$new_domain"' --target_file="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
 #=================================================
 # SETUP SSO
