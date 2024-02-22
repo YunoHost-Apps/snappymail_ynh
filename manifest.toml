@@ -46,10 +46,11 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/the-djmaze/snappymail/archive/refs/tags/v2.35.0.tar.gz"
-        sha256 = "38527768eb08d17c75a2d9bf9732d71caececa83858a3f304a2e30d5b8afcd57"
+        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.35.0/snappymail-2.35.0.tar.gz"
+        sha256 = "98e08c62d6992bc6901c39282eddc20a264e7a402e9bf02465409d6ac23197f5"
         in_subdir = false
         autoupdate.strategy = "latest_github_tag"
+        autoupdate.asset = "^snappymail-.*tar.gz$"
 
     [resources.system_user]
 
