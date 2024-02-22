@@ -49,7 +49,8 @@ ram.runtime = "50M"
         url = "https://github.com/the-djmaze/snappymail/releases/download/v2.34.2/snappymail-2.34.2.tar.gz"
         sha256 = "ca2aaf930a8bb339a80076d5173f9539216124e8b6e88ad84c73fc2596c21d08"
         in_subdir = false
-        autoupdate.strategy = "latest_github_tag"
+        autoupdate.strategy = "latest_github_release"
+        autoupdate.asset = "^snappymail-.*tar.gz$"
 
     [resources.system_user]
 
@@ -63,4 +64,3 @@ ram.runtime = "50M"
 
     [resources.database]
     type = "mysql"
-    
