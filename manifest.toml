@@ -50,7 +50,7 @@ ram.runtime = "50M"
         sha256 = "ca2aaf930a8bb339a80076d5173f9539216124e8b6e88ad84c73fc2596c21d08"
         in_subdir = false
         autoupdate.strategy = "latest_github_release"
-        autoupdate.asset = "^snappymail-.*tar.gz$"
+        autoupdate.asset = "^snappymail-[0-9\\.\\-]*tar.gz$"
 
     [resources.system_user]
 
