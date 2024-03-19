@@ -17,10 +17,9 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 ## Vue d’ensemble
 
 Client de messagerie Web simple, moderne, léger et rapide. Snappymail est un fork considérablement amélioré et sécurisé de l'édition RainLoop Webmail Community.
+**Version incluse :** 2.35.4~ynh1
 
-**Version incluse :** 2.35.2~ynh2
-
-**Démo :** https://snappymail.eu/demo/
+**Démo :** <https://snappymail.eu/demo/>
 
 ## Captures d’écran
 
@@ -28,11 +27,11 @@ Client de messagerie Web simple, moderne, léger et rapide. Snappymail est un fo
 
 ## Documentations et ressources
 
-* Site officiel de l’app : <https://snappymail.eu/>
-* Documentation officielle de l’admin : <https://github.com/the-djmaze/snappymail/wiki>
-* Dépôt de code officiel de l’app : <https://github.com/the-djmaze/snappymail>
-* YunoHost Store: <https://apps.yunohost.org/app/snappymail>
-* Signaler un bug : <https://github.com/YunoHost-Apps/snappymail_ynh/issues>
+- Site officiel de l’app : <https://snappymail.eu/>
+- Documentation officielle de l’admin : <https://github.com/the-djmaze/snappymail/wiki>
+- Dépôt de code officiel de l’app : <https://github.com/the-djmaze/snappymail>
+- YunoHost Store : <https://apps.yunohost.org/app/snappymail>
+- Signaler un bug : <https://github.com/YunoHost-Apps/snappymail_ynh/issues>
 
 ## Informations pour les développeurs
 
@@ -40,7 +39,7 @@ Merci de faire vos pull request sur la [branche testing](https://github.com/Yuno
 
 Pour essayer la branche testing, procédez comme suit.
 
-``` bash
+```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/snappymail_ynh/tree/testing --debug
 ou
 sudo yunohost app upgrade snappymail -u https://github.com/YunoHost-Apps/snappymail_ynh/tree/testing --debug
