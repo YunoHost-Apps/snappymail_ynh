@@ -46,8 +46,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.36.1/snappymail-2.36.1.tar.gz"
-        sha256 = "0e3e25ca0d33fd67f2f825161c726d48d1db8ad1662c968b95eb71ca25ddae65"
+        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.36.2/snappymail-2.36.2.tar.gz"
+        sha256 = "a9e4661ca48d770d08a32ddb800ff75e7a645bacb8a310cae7b24e9c38788ff2"
         in_subdir = false
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset = "^snappymail-[0-9\\.\\-]*tar.gz$"
@@ -60,7 +60,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server, php8.2-sqlite3, php8.2-tidy, php8.2-dom, php8.2-intl, php8.2-mysql, php8.2-curl, php8.2-gd, php8.2-cli, php8.2-xml, php8.2-mbstring, php8.2-ldap"
+    packages = "mariadb-server, php8.3-sqlite3, php8.3-tidy, php8.3-dom, php8.3-intl, php8.3-mysql, php8.3-curl, php8.3-gd, php8.3-cli, php8.3-xml, php8.3-mbstring, php8.3-ldap"
 
     [resources.database]
     type = "mysql"

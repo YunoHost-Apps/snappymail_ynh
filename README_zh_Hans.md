@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 SnappyMail
+# YunoHost 上的 SnappyMail
 
 [![集成程度](https://dash.yunohost.org/integration/snappymail.svg)](https://dash.yunohost.org/appci/app/snappymail) ![工作状态](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
 
