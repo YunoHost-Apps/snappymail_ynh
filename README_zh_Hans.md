@@ -5,7 +5,7 @@
 
 # YunoHost 上的 SnappyMail
 
-[![集成程度](https://dash.yunohost.org/integration/snappymail.svg)](https://dash.yunohost.org/appci/app/snappymail) ![工作状态](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/snappymail.svg)](https://ci-apps.yunohost.org/ci/apps/snappymail/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
 
 [![使用 YunoHost 安装 SnappyMail](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=snappymail)
 
