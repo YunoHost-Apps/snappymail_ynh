@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # SnappyMail para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/snappymail.svg)](https://dash.yunohost.org/appci/app/snappymail) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/snappymail.svg)](https://ci-apps.yunohost.org/ci/apps/snappymail/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
 
 [![Instalar SnappyMail con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=snappymail)
 
