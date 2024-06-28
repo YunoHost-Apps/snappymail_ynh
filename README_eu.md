@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # SnappyMail YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/snappymail.svg)](https://dash.yunohost.org/appci/app/snappymail) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/snappymail.svg)](https://ci-apps.yunohost.org/ci/apps/snappymail/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
 
 [![Instalatu SnappyMail YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=snappymail)
 
