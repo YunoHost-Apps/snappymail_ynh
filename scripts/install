@@ -1,20 +1,13 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=3
+ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir/app"
 
 chmod -R o-rwx "$install_dir"
@@ -23,28 +16,25 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..." --weight=3
+ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated PHP-FPM config
-ynh_add_fpm_config
+ynh_config_add_phpfpm
 
-# Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
-# Use logrotate to manage application logfile(s)
-ynh_use_logrotate
+ynh_config_add_logrotate
 
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression "Adding $app's configuration..."
 
 mkdir -p "$install_dir/app/data/_data_/_default_/configs"
 chown $app:$app -R "$install_dir/app/data/_data_"
 
-ynh_add_config --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
+ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
 chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
 chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
@@ -52,12 +42,12 @@ chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
 #=================================================
 # SETUP SSO
 #=================================================
-ynh_script_progression --message="Applying SSO patch..." --weight=1
+ynh_script_progression "Applying SSO patch..."
 
-ynh_add_config --template="sso.php" --destination="$install_dir/index.php"
+ynh_config_add --template="sso.php" --destination="$install_dir/index.php"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"

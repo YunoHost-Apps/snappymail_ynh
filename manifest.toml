@@ -17,7 +17,8 @@ admindoc = "https://github.com/the-djmaze/snappymail/wiki"
 code = "https://github.com/the-djmaze/snappymail"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 11.2.17"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
@@ -46,8 +47,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.36.3/snappymail-2.36.3.tar.gz"
-        sha256 = "fbc6f0ea915ba20335f79e4e3bfc36d4a9c96be2650002d345cda6d5001739b1"
+        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.36.4/snappymail-2.36.4.tar.gz"
+        sha256 = "a4a398c84895b336d93358837bc7ba62068d3c1e8ca2201cdb87b4e8dc9e79bd"
         in_subdir = false
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset = "^snappymail-[0-9\\.\\-]*tar.gz$"
