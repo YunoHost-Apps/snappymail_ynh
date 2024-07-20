@@ -19,7 +19,7 @@ It shall NOT be edited by hand.
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**Shipped version:** 2.36.3~ynh2
+**Shipped version:** 2.36.3~ynh3
 
 **Demo:** <https://snappymail.eu/demo/>
 
