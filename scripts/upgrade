@@ -16,9 +16,6 @@ then
     mkdir -p $install_dir/app
     # Ugly way to not return an error when moving everything to a subfolter of the same folder https://stackoverflow.com/a/43262922
     find $install_dir -maxdepth 1 -mindepth 1 -not -name app -exec mv -t $install_dir/app {} +
-    chown $app:www-data $install_dir/app/
-    chown $app:$app -R "$install_dir/app/data/_data_"
-    chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
 fi
 
 #=================================================
@@ -51,8 +48,8 @@ ynh_config_add_logrotate
 
 #ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
-chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
-chown -R $app:$app "$install_dir/app/data/_data_"
+chmod -R 600 "$install_dir/app/data"
+chown -R $app:$app "$install_dir/app/data"
 
 #=================================================
 # SETUP SSO
