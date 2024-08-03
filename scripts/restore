@@ -11,8 +11,10 @@ ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
 
-chmod -R o-rwx "$install_dir"
+chmod -R 750 "$install_dir"
 chown -R $app:www-data "$install_dir"
+chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chown -R $app:$app "$install_dir/app/data/_data_"
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATIONS
