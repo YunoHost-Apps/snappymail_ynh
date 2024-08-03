@@ -10,7 +10,7 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir/app"
 
-chmod -R 755 "$install_dir"
+chmod -R 750 "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
@@ -32,12 +32,10 @@ ynh_config_add_logrotate
 ynh_script_progression "Adding $app's configuration..."
 
 mkdir -p "$install_dir/app/data/_data_/_default_/configs"
-chown $app:$app -R "$install_dir/app/data/_data_"
-
 ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
-chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
-chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chown -R $app:$app "$install_dir/app/data"
+chmod -R 600 "$install_dir/app/data"
 
 #=================================================
 # SETUP SSO
