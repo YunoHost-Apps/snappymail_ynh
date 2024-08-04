@@ -16,7 +16,6 @@ then
     mkdir -p $install_dir/app
     # Ugly way to not return an error when moving everything to a subfolter of the same folder https://stackoverflow.com/a/43262922
     find $install_dir -maxdepth 1 -mindepth 1 -not -name app -exec mv -t $install_dir/app {} +
-    chown $app:root $install_dir/app/
 fi
 
 #=================================================
@@ -24,9 +23,9 @@ fi
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir/app" --keep="data/_data_/_default_/configs/application.ini"
+ynh_setup_source --dest_dir="$install_dir/app" --full_replace=1 --keep="data/_data_/_default_/configs/application.ini"
 
-chmod -R o-rwx "$install_dir"
+chmod -R 750 "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
@@ -49,8 +48,8 @@ ynh_config_add_logrotate
 
 #ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
-#chmod 600 "$install_dir/app/data/_data_/_default_/configs/application.ini"
-#chown $app:$app "$install_dir/app/data/_data_/_default_/configs/application.ini"
+chmod -R 600 "$install_dir/app/data"
+chown -R $app:$app "$install_dir/app/data"
 
 #=================================================
 # SETUP SSO
@@ -58,6 +57,8 @@ ynh_config_add_logrotate
 ynh_script_progression "Applying SSO patch..."
 
 ynh_config_add --template="sso.php" --destination="$install_dir/index.php"
+chown $app:www-data "$install_dir/index.php"
+chmod 750 "$install_dir/index.php"
 
 #=================================================
 # END OF SCRIPT
