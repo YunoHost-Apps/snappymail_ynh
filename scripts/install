@@ -11,21 +11,8 @@ ynh_script_progression "Setting up source files..."
 ynh_setup_source --dest_dir="$install_dir/app"
 
 chmod -R 750 "$install_dir"
-chown -R $app:www-data "$install_dir"
+chown -R "$app:www-data" "$install_dir"
 
-#=================================================
-# SYSTEM CONFIGURATION
-#=================================================
-ynh_script_progression "Adding system configurations related to $app..."
-
-ynh_config_add_phpfpm
-
-ynh_config_add_nginx
-
-ynh_config_add_logrotate
-
-#=================================================
-# APP INITIAL CONFIGURATION
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -43,8 +30,19 @@ chmod -R 600 "$install_dir/app/data"
 ynh_script_progression "Applying SSO patch..."
 
 ynh_config_add --template="sso.php" --destination="$install_dir/index.php"
-chown $app:www-data "$install_dir/index.php"
+chown "$app:www-data" "$install_dir/index.php"
 chmod 750 "$install_dir/index.php"
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+ynh_script_progression "Adding system configurations related to $app..."
+
+ynh_config_add_phpfpm
+
+ynh_config_add_nginx
+
+ynh_config_add_logrotate
 
 #=================================================
 # END OF SCRIPT
