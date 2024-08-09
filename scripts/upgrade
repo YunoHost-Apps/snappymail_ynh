@@ -32,7 +32,7 @@ chown -R "$app:www-data" "$install_dir"
 #=================================================
 #ynh_script_progression "Updating configuration..."
 
-#ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
+ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
 chmod -R "u=rwX,g=,o=" "$install_dir/app/data"
 chown -R "$app:$app" "$install_dir/app/data"
