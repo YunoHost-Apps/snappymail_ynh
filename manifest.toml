@@ -5,7 +5,7 @@ name = "SnappyMail"
 description.en = "Simple, modern, lightweight & fast web-based e-mail client"
 description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
-version = "2.37.3~ynh1"
+version = "2.37.3~ynh2"
 
 maintainers = []
 
@@ -17,7 +17,7 @@ admindoc = "https://github.com/the-djmaze/snappymail/wiki"
 code = "https://github.com/the-djmaze/snappymail"
 
 [integration]
-yunohost = ">= 11.2.20"
+yunohost = ">= 11.2.27"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
