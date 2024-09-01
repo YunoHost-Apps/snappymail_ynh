@@ -10,9 +10,6 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir/app"
 
-chmod -R "u=rX,g=rX,o=" "$install_dir"
-chown -R "$app:www-data" "$install_dir"
-
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
