@@ -22,7 +22,7 @@ fi
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir/app" --full_replace --keep="data/_data_/_default_/configs/application.ini"
+ynh_setup_source --dest_dir="$install_dir/app" --full_replace --keep="app/data/_data_/_default_/configs/application.ini"
 
 #=================================================
 # UPDATE A CONFIG FILE
@@ -41,6 +41,7 @@ chown -R "$app:$app" "$install_dir/app/data"
 ynh_script_progression "Applying SSO patch..."
 
 ynh_config_add --template="sso.php" --destination="$install_dir/index.php"
+
 chmod "u=rX,g=,o=" "$install_dir/index.php"
 chown "$app:www-data" "$install_dir/index.php"
 
