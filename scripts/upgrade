@@ -27,13 +27,13 @@ ynh_setup_source --dest_dir="$install_dir/app" --full_replace --keep="app/data/_
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression "Updating configuration..."
+#ynh_script_progression "Updating configuration..."
 
-mkdir -p "$install_dir/app/data/_data_/_default_/configs"
-ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
+#mkdir -p "$install_dir/app/data/_data_/_default_/configs"
+#ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
-chmod -R "u=rwX,g=,o=" "$install_dir/app/data"
-chown -R "$app:$app" "$install_dir/app/data"
+#chmod -R "u=rwX,g=,o=" "$install_dir/app/data"
+#chown -R "$app:$app" "$install_dir/app/data"
 
 #=================================================
 # SETUP SSO
