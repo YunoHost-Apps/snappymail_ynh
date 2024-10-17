@@ -19,7 +19,7 @@ No se debe editar a mano.
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**Versión actual:** 2.37.3~ynh1
+**Versión actual:** 2.38.2~ynh1
 
 **Demo:** <https://snappymail.eu/demo/>
 
@@ -37,7 +37,7 @@ Simple, modern, lightweight & fast web-based email client. The drastically upgra
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/snappymail_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/snappymail_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

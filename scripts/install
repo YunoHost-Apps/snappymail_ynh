@@ -10,9 +10,6 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir/app"
 
-chmod -R "u=rX,g=rX,o=" "$install_dir"
-chown -R "$app:www-data" "$install_dir"
-
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -30,6 +27,7 @@ chown -R "$app:$app" "$install_dir/app/data"
 ynh_script_progression "Applying SSO patch..."
 
 ynh_config_add --template="sso.php" --destination="$install_dir/index.php"
+
 chmod "u=rX,g=,o=" "$install_dir/index.php"
 chown "$app:www-data" "$install_dir/index.php"
 
