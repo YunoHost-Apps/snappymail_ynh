@@ -5,7 +5,9 @@
 
 # SnappyMail для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/snappymail.svg)](https://ci-apps.yunohost.org/ci/apps/snappymail/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/snappymail.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/snappymail.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/snappymail)](https://ci-apps.yunohost.org/ci/apps/snappymail/)
+![Состояние работы](https://apps.yunohost.org/badge/state/snappymail)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/snappymail)
 
 [![Установите SnappyMail с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=snappymail)
 
