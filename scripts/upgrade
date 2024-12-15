@@ -32,8 +32,8 @@ ynh_setup_source --dest_dir="$install_dir/app" --full_replace --keep="data/_data
 #mkdir -p "$install_dir/app/data/_data_/_default_/configs"
 #ynh_config_add --template="application.ini" --destination="$install_dir/app/data/_data_/_default_/configs/application.ini"
 
-#chmod -R "u=rwX,g=,o=" "$install_dir/app/data"
-#chown -R "$app:$app" "$install_dir/app/data"
+chmod -R "u=rwX,g=,o=" "$install_dir/app/data"
+chown -R "$app:$app" "$install_dir/app/data"
 
 #=================================================
 # SETUP SSO
