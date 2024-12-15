@@ -20,7 +20,7 @@ Il NE doit PAS être modifié à la main.
 
 Client de messagerie Web simple, moderne, léger et rapide. Snappymail est un fork considérablement amélioré et sécurisé de l'édition RainLoop Webmail Community.
 
-**Version incluse :** 2.38.2~ynh2
+**Version incluse :** 2.38.2~ynh3
 
 **Démo :** <https://snappymail.eu/demo/>
 

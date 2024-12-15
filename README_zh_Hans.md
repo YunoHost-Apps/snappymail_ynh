@@ -21,7 +21,7 @@
 Simple, modern, lightweight & fast web-based email client. The drastically upgraded & secured fork of RainLoop Webmail Community edition.
 
 
-**分发版本：** 2.38.2~ynh2
+**分发版本：** 2.38.2~ynh3
 
 **演示：** <https://snappymail.eu/demo/>
 
