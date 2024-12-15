@@ -5,7 +5,7 @@ name = "SnappyMail"
 description.en = "Simple, modern, lightweight & fast web-based e-mail client"
 description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
-version = "2.38.2~ynh1"
+version = "2.38.2~ynh2"
 
 maintainers = []
 
@@ -21,9 +21,7 @@ yunohost = ">= 11.2.30"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
-
 ldap = false
-
 sso = true
 
 disk = "50M"
