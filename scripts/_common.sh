@@ -5,4 +5,4 @@
 #=================================================
 
 main_domain=$(cat /etc/yunohost/current_host)
-timezone=$(cat /etc/timezone)
+timezone=$(timedatectl show --value --property=Timezone)
