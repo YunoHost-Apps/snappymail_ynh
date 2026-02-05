@@ -12,12 +12,16 @@ Simple, modern, lightweight & fast web-based e-mail client
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://snappymail.eu/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://snappymail.eu/demo/)
-[![Version: 2.38.2~ynh4](https://img.shields.io/badge/Version-2.38.2~ynh4-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/snappymail/)
+[![Version: 2.38.2~ynh4](https://img.shields.io/badge/Version-2.38.2~ynh4-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/snappymail/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/snappymail"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
 <a href="https://github.com/YunoHost-Apps/snappymail_ynh/issues"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_report_an_issue.svg"/></a>
 </div>
+
+
+## Screenshots
+![Screenshot of SnappyMail](./doc/screenshots/screenshot.png)
 
 ## 📦 Developer info
 
