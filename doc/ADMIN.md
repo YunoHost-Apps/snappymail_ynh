@@ -26,9 +26,9 @@ Click on __DOMAIN__, "SIEVE" tab, check "Allow sieve scripts".
 
 - [Migration/Upgrade from RainLoop](https://github.com/the-djmaze/snappymail/wiki/Installation-instructions#migrationupgrade-from-rainloop)
 
-### Install on a subdomain
+## Install on a subdomain
 
-You may experience login issue when __APP__ is installed on a subdomain. In such case ("Access denied - Disallowed Sec-Fetch Dest: document Mode: navigate Site: cross-site User: true) add around line 113 to __INSTALL_DIR__/app/data/_data_/_default_/configs/application.ini the following :
-``
+You may experience login issue when __APP__ is installed on a subdomain. In such case ("Access denied - Disallowed Sec-Fetch Dest: document Mode: navigate Site: cross-site User: true) add the following line (around line 113) of __INSTALL_DIR__/app/data/_data_/_default_/configs/application.ini:  
+``` 
 secfetch_allow = "dest=document,mode=navigate,site=same-site"
 ```
