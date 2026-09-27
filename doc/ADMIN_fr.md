@@ -25,3 +25,10 @@ L’onglet « Filtres » apparaitra dans la configuration de l’interface utili
 ---
 
 - [Migration/Upgrade from RainLoop](https://github.com/the-djmaze/snappymail/wiki/Installation-instructions#migrationupgrade-from-rainloop)
+
+## Installation sur un sous-domaine
+
+Il se peut que vous rencontriez des problèmes d'authentification lorsque __APP__ est installé sur un sous-domaine. En pareil cas, (_"Access denied - Disallowed Sec-Fetch Dest: document Mode: navigate Site: cross-site User: true_), ajoutez la ligne suivante (vers la ligne 113) au fichier __INSTALL_DIR__/app/data/_data_/_default_/configs/application.ini:  
+``` 
+secfetch_allow = "dest=document,mode=navigate,site=same-site"
+```
