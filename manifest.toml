@@ -5,7 +5,7 @@ name = "SnappyMail"
 description.en = "Simple, modern, lightweight & fast web-based e-mail client"
 description.fr = "Client de messagerie Web simple, moderne, léger et rapide"
 
-version = "2.38.2~ynh4"
+version = "3.0.0~ynh1"
 
 maintainers = []
 
@@ -17,7 +17,7 @@ admindoc = "https://github.com/the-djmaze/snappymail/wiki"
 code = "https://github.com/the-djmaze/snappymail"
 
 [integration]
-yunohost = ">= 12.1.39"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -46,8 +46,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/the-djmaze/snappymail/releases/download/v2.38.2/snappymail-2.38.2.tar.gz"
-        sha256 = "71f1d8a9065cc9cf7ddd064f5c47cc7b255cb70e6a56713647fc73d4b79e33ec"
+        url = "https://github.com/the-djmaze/snappymail/releases/download/v3.0.0/snappymail-3.0.0.tar.gz"
+        sha256 = "ac495fb8eb95a27c3f2bfab74db0d15b12079c35ef1c533dc70504865f21d000"
         in_subdir = false
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset = "^snappymail-[0-9\\.\\-]*tar.gz$"
@@ -63,19 +63,19 @@ ram.runtime = "50M"
     [resources.apt]
     packages = [
         "mariadb-server",
-        "php8.4-uuid",
-        "php8.4-imagick",
-        "php8.4-sqlite3",
-        "php8.4-tidy",
-        "php8.4-dom",
-        "php8.4-intl",
-        "php8.4-mysql",
-        "php8.4-curl",
-        "php8.4-gd",
-        "php8.4-cli",
-        "php8.4-xml",
-        "php8.4-mbstring",
-        "php8.4-ldap",
+        "php8.5-uuid",
+        "php8.5-imagick",
+        "php8.5-sqlite3",
+        "php8.5-tidy",
+        "php8.5-dom",
+        "php8.5-intl",
+        "php8.5-mysql",
+        "php8.5-curl",
+        "php8.5-gd",
+        "php8.5-cli",
+        "php8.5-xml",
+        "php8.5-mbstring",
+        "php8.5-ldap",
     ]
 
     [resources.database]
